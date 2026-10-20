@@ -37,6 +37,3 @@ Historical base-year figures and bridge items are traced in `docs/evidence-ledge
 
 Run `py -3 app.py --write-output` to regenerate the visible output. The `validation` section of the report contains the known-answer, monotonicity, articulation, bridge, bounds, and changed-input tests. No credentials, network connection, packages, or private data are needed.
 
-## Required student actions before submission
-
-The course requires a real Brightspace Edition A receipt and a human-authored AI-off changed-input prediction made before execution. Neither can be fabricated. Complete the clearly marked fields in `docs/research-evolution.md`, `docs/validation-and-ai-use.md`, and `docs/project-submission-manifest.csv`; then regenerate the PDFs with `py -3 tools/build_submission_pdfs.py` and record the actual video links/durations/transcripts after recording.
