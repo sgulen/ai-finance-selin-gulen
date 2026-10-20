@@ -1,7 +1,7 @@
 PROJECT: Project 1 Corporate Finance Application - TSLA
 STUDENT: Selin Gulen
 VIDEO: 3 Committee Presentation and Live Product Demonstration
-STABLE VIDEO ID/URL: STUDENT MUST ENTER AFTER UPLOAD
+STABLE VIDEO ID/URL: https://youtu.be/FHHfsRT2SLw
 TITLE: TSLA Committee Presentation and Live Demo
 DURATION: STUDENT MUST ENTER; MUST BE 5:00 OR LESS
 REPOSITORY COMMIT/FROZEN VERSION: STUDENT MUST ENTER
@@ -24,4 +24,4 @@ REPOSITORY COMMIT/FROZEN VERSION: STUDENT MUST ENTER
 
 [03:40] My committee ask is simple: retain TSLA on the watch list; do not allocate capital today; assign the next review to the next two earnings releases, with a specific focus on incremental margin and cash returns on investment. The workbench remains available for the committee to test bounded assumptions without changing the underlying accounting engine.
 
-END OF CORRECTED TRANSCRIPT - replace timestamps and any changed facts after recording.
+END OF CORRECTED TRANSCRIPT 
