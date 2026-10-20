@@ -2,7 +2,7 @@
 
 ## Decision, version, and as-of boundary
 
-**Decision/user:** watch/defer TSLA for a buy-side equity-research committee with no current position. **Run command:** `py -3 app.py --write-output`. **Financial-statement and bridge as-of date:** 2025-12-31. **Screen/market-reference date:** 2026-09-10, using the month-end August 2026 checkpoint retained in early local notes. **Edition A disclosure:** the original baseline and receipt are unavailable; the companion research-evolution document contains a clearly labeled retrospective recollection, not a recreated original. **Version/commit:** no Git executable or commit history was available in this workspace; create a commit before submitting and enter it here: **STUDENT MUST ENTER COMMIT ID**.
+**Decision/user:** watch/defer TSLA for a buy-side equity-research committee with no current position. **Run command:** `py -3 app.py --write-output`. **Financial-statement and bridge as-of date:** 2025-12-31. **Screen/market-reference date:** 2026-09-10, using the month-end August 2026 checkpoint retained in early local notes. **Edition A disclosure:** the original baseline and receipt are unavailable; the companion research-evolution document contains a clearly labeled retrospective recollection, not a recreated original. **Version/commit:** no Git executable or commit history was available in this workspace; create a commit before submitting and enter it here: 7460ed1.
 
 ## Data and convention ledger
 
