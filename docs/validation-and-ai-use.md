@@ -31,7 +31,7 @@
 
 ## Locked Changed-Input Record - human prediction first; AI closed during execution
 
-| 2026-10-19, 9:42 PM EDT | Repository commit | Segment gross-margin shift | 0.0pp -> +1.0pp | A higher segment gross margin is expected to increase gross profit, EBIT, FCFF, and value per share | No change from watch/defer status is expected, since value is still expected to be below market |
+| 2026-10-19, 9:42 PM EDT | dc8444a775dcee1c1ab6b504784d07765b86e516 | Segment gross-margin shift | 0.0pp -> +1.0pp | A higher segment gross margin is expected to increase gross profit, EBIT, FCFF, and value per share | No change from watch/defer status is expected, since value is still expected to be below market |
 |---|---|---|---|---|---|
 
 | Before/after output | Actual decision effect | Prediction reconciliation | Failure diagnosis or no-change reason | Evidence path |
