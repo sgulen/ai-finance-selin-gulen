@@ -3,8 +3,8 @@ STUDENT: Selin Gulen
 VIDEO: 3 Committee Presentation and Live Product Demonstration
 STABLE VIDEO ID/URL: https://youtu.be/FHHfsRT2SLw
 TITLE: TSLA Committee Presentation and Live Demo
-DURATION: STUDENT MUST ENTER; MUST BE 5:00 OR LESS
-REPOSITORY COMMIT/FROZEN VERSION: STUDENT MUST ENTER
+DURATION: 4:29
+REPOSITORY COMMIT/FROZEN VERSION: 13e4cc6
 
 [00:00] My recommendation is watch/defer; do not initiate a TSLA position. I will start by operating the workbench that supports the recommendation. This is an educational analysis, not investment advice.
 
