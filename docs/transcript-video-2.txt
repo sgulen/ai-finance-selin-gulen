@@ -1,5 +1,5 @@
 PROJECT: Project 1 Corporate Finance Application - TSLA
-STUDENT: STUDENT MUST ENTER NAME
+STUDENT: Selin Gulen
 VIDEO: 2 Codebase Walkthrough and Validation
 STABLE VIDEO ID/URL: STUDENT MUST ENTER AFTER UPLOAD
 TITLE: TSLA Codebase Walkthrough and Validation
