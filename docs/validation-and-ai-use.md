@@ -27,7 +27,7 @@
 | Source definition | Mix current shares with weighted-average shares | Model must use one stated convention throughout | 3,528M used throughout | Qualified | evidence ledger |
 | Comps/transactions | Unsupported peer multiple affects action | Require point-in-time market/financial source packet before use | Not complete; omitted from recommendation | Qualified limitation | decision memo |
 | Base-year source reconciliation | Historical opening values drift from filing | Compare revenue, EBIT, segment revenue, cash, investments, and debt to evidence ledger | Pass: `base_year_reconciles_to_ledger=True` | Accepted | visible output JSON `checks`; `BASE_YEAR` |
-| Cold run | Local environment masks a dependency or path problem | Clone/export to a clean folder; run `py -3 app.py --write-output`; record OS/Python/time/result | **STUDENT MUST RUN AND RECORD** | Open | add `docs/cold-run-log.md` |
+| Cold run | Local environment masks a dependency or path problem | Clone/export to a clean folder; run `py -3 app.py --write-output`; record OS/Python/time/result | Pass | Open | add `docs/cold-run-log.md` |
 
 ## Locked Changed-Input Record - human prediction first; AI closed during execution
 
