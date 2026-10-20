@@ -1,9 +1,9 @@
 PROJECT: Project 1 Corporate Finance Application - TSLA
 STUDENT: Selin Gulen
 VIDEO: 2 Codebase Walkthrough and Validation
-STABLE VIDEO ID/URL: STUDENT MUST ENTER AFTER UPLOAD
+STABLE VIDEO ID/URL: https://youtu.be/wt0hoQXsUaY?si=wa1HWO_FZyQM8P9i
 TITLE: TSLA Codebase Walkthrough and Validation
-DURATION: STUDENT MUST ENTER; MUST BE 5:00 OR LESS
+DURATION: 3:41
 REPOSITORY COMMIT/FROZEN VERSION: STUDENT MUST ENTER
 
 [00:00] This is the TSLA Valuation Workbench. It is a local standard-library Python application. A clean user runs `py -3 app.py --write-output` to recreate the visible output, or `py -3 app.py --interactive` to operate the driver panel.
