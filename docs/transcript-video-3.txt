@@ -1,0 +1,27 @@
+PROJECT: Project 1 Corporate Finance Application - TSLA
+STUDENT: STUDENT MUST ENTER NAME
+VIDEO: 3 Committee Presentation and Live Product Demonstration
+STABLE VIDEO ID/URL: STUDENT MUST ENTER AFTER UPLOAD
+TITLE: TSLA Committee Presentation and Live Demo
+DURATION: STUDENT MUST ENTER; MUST BE 5:00 OR LESS
+REPOSITORY COMMIT/FROZEN VERSION: STUDENT MUST ENTER
+
+[00:00] My recommendation is watch/defer; do not initiate a TSLA position. I will start by operating the workbench that supports the recommendation. This is an educational analysis, not investment advice.
+
+[00:10] The base case is visible here: $25.80 per diluted share, with a $20.65 to $34.72 WACC-and-terminal-growth stress range. The model exposes only bounded drivers. I will change segment-margin shift from zero to positive one percentage point. The value moves to about $28.80 per share. This is the expected direction because higher gross margin raises NOPAT and FCFF.
+
+[00:35] I now reset the base. The value returns to $25.80. To demonstrate a check that fails loudly, I set terminal growth to 0.11 while WACC remains 0.105. The workbench rejects the input and produces no valuation because a Gordon-growth terminal value requires terminal growth below WACC. I reset again, restoring the base.
+
+[01:00] The committee should not initiate because the DCF is materially below the retained September 10, 2026 market reference of $367.95. The model is not a claim that $22.09 is a precise target. It is a range framework that makes the assumptions and failure conditions inspectable.
+
+[01:25] The financial base is FY2025. Reported revenue was $94.827 billion and EBIT was $4.355 billion; the final filing shows $97.690 billion as FY2024 revenue, not FY2025. The enterprise-to-equity bridge adds $44.059 billion of cash and short-term investments and deducts $8.376 billion of debt and finance leases plus $0.728 billion of noncommon claims. The stated per-share denominator is 3.528 billion FY2025 diluted weighted-average shares.
+
+[01:55] My five-year base path models automotive, energy, and services separately. These are analyst assumptions, not management guidance. Over my disclosed ranges, segment margin is the larger driver: a two-point lower margin path produces $19.79 per share and a two-point higher path produces $31.80. Growth changes produce $24.77 to $26.62 because incremental revenue also consumes working capital and capex. The linked downside, base, and upside cases produce $18.58, $25.80, and $37.29 per share; downside changes the action to do not initiate.
+
+[02:30] The major caveat is terminal-value dependence: 90.9% of enterprise value comes from terminal value. At the retained $367.95 market reference, the base operating path requires 10.2% terminal growth, far beyond my approved range. The comparable workpaper is qualified rather than averaged into the DCF. Regulatory-credit persistence, AI and factory capex returns, legal/regulatory outcomes, dilution, digital assets, and the SpaceX investment remain risks.
+
+[03:10] My reversal trigger is evidence from two consecutive filings that supports a credible path toward the forecast operating margins and cash flow, combined with an updated bridge and peer source packet as of one common date. I would withdraw the current valuation conclusion if the bridge stops reconciling or if a material filing changes the classification of operating assets or claims.
+
+[03:40] My committee ask is simple: retain TSLA on the watch list; do not allocate capital today; assign the next review to the next two earnings releases, with a specific focus on incremental margin and cash returns on investment. The workbench remains available for the committee to test bounded assumptions without changing the underlying accounting engine.
+
+END OF CORRECTED TRANSCRIPT - replace timestamps and any changed facts after recording.

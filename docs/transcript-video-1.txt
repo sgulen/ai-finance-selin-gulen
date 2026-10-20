@@ -1,0 +1,25 @@
+PROJECT: Project 1 Corporate Finance Application - TSLA
+STUDENT: STUDENT MUST ENTER NAME
+VIDEO: 1 Research Evolution and AI Output Check
+STABLE VIDEO ID/URL: STUDENT MUST ENTER AFTER UPLOAD
+TITLE: TSLA Research Evolution and AI Output Check
+DURATION: STUDENT MUST ENTER; MUST BE 3:00 OR LESS
+REPOSITORY COMMIT/FROZEN VERSION: STUDENT MUST ENTER
+
+[00:00] Hi, I am presenting my Project 1 research evolution for Tesla. My recommendation is watch/defer and do not initiate a position at the retained September 10, 2026 market reference. This is an educational analysis, not investment advice.
+
+[00:15] My intended user is a buy-side equity-research committee with no current position. My original Edition A screened TSLA out because it failed the stated maximum-drawdown and positive-month gates. I preserved that file unchanged. [State the truthful Brightspace receipt status shown in the research-evolution record.]
+
+[00:35] In Edition B, the action is still negative, but the reason is stronger and different. I built a five-year segmented-pro-forma FCFF valuation using FY2025 financial statements and a December 31, 2025 enterprise-to-equity bridge. The base result is $25.80 per diluted share, versus the retained $367.95 market reference. My WACC and terminal-growth stress range is $20.65 to $34.72.
+
+[01:00] The consequential change is from a screen-only decision to a valuation-supported conditional decision. The largest limitation is that terminal value is 90.9% of enterprise value, so the long-run operating-margin and reinvestment assumptions matter much more than a small formatting change in the model.
+
+[01:20] Here is a material AI output I checked. Codex helped draft the standard-library model structure and suggested a +100-basis-point margin changed-input test. I did not treat that suggestion as evidence. I checked the implementation against the course known-answer fixture, the source-linked input ledger, the balance-sheet and bridge reconciliations, and the expected DCF directions.
+
+[01:45] The known-answer test produces $27.49737 per share, within one cent of the course fixture. Increasing WACC lowers value, increasing terminal growth raises value, and an incoherent terminal-growth input fails rather than silently producing a number. I accepted the model structure only after those checks, and I qualified the finance conclusion because the cash bridge, peer evidence, and long-run margin path still need further support.
+
+[02:15] My human-authored locked prediction is recorded separately before the margin test. The actual run changes value from $25.80 to $28.80 when I add one percentage point to the segment-margin path. That does not change the action because it remains far below the retained market reference.
+
+[02:40] I would reopen the decision only if two consecutive filings show source-supported operating-margin and cash-flow improvement toward the forecast path, and if I refresh the bridge and peer evidence to one common date. My current committee action is to monitor, not initiate.
+
+END OF CORRECTED TRANSCRIPT - replace timestamps and any changed facts after recording.

@@ -1,0 +1,447 @@
+{
+  "as_of": "2025-12-31",
+  "currency_and_scale": "USD millions except per share",
+  "decision": "Watch/defer; do not initiate at the retained 2026-09-10 market reference without stronger operating-return evidence.",
+  "base_result": {
+    "valid": true,
+    "assumptions": {
+      "revenue_growth_shift": 0.0,
+      "segment_margin_shift": 0.0,
+      "wacc": 0.105,
+      "terminal_growth": 0.025,
+      "tax_rate": 0.27,
+      "cash": 16513.0,
+      "short_term_investments": 27546.0,
+      "debt_and_finance_leases": 8376.0,
+      "redeemable_nci": 58.0,
+      "nci": 670.0,
+      "diluted_shares": 3528.0
+    },
+    "base_year": {
+      "year": 2025,
+      "revenue": 94827.0,
+      "ebit": 4355.0,
+      "cash": 16513.0,
+      "investments": 27546.0,
+      "ar": 4576.0,
+      "inventory": 12392.0,
+      "other_operating_assets": 36136.0,
+      "ppe": 40643.0,
+      "ap": 13371.0,
+      "other_operating_liabilities": 33194.0,
+      "debt": 8376.0,
+      "segment_revenue": {
+        "auto": 69526.0,
+        "energy": 12771.0,
+        "services": 12530.0
+      }
+    },
+    "years": [
+      {
+        "year": 2026,
+        "revenue": 102304.39000000001,
+        "growth": 0.07885296381832196,
+        "ebit_margin": 0.05922729904356984,
+        "segment_revenue": {
+          "auto": 72307.04000000001,
+          "energy": 15963.75,
+          "services": 14033.600000000002
+        },
+        "segment_gross_profit": {
+          "auto": 13015.2672,
+          "energy": 4709.30625,
+          "services": 1122.688
+        },
+        "gross_profit": 18847.261449999998,
+        "rd": 6547.480960000001,
+        "sga": 6240.567790000001,
+        "ebit": 6059.212699999996,
+        "nopat": 4423.2252709999975,
+        "da": 6149.2859,
+        "capex": 21000.0,
+        "change_nwc": 526.5226509479398,
+        "cash_from_operations": 10045.988520052058,
+        "fcff": -10954.011479947942,
+        "cash": 5558.988520052058,
+        "investments": 27546.0,
+        "ar": 4941.302037000001,
+        "inventory": 13307.410634547949,
+        "other_operating_assets": 38988.203029000004,
+        "ppe": 55493.7141,
+        "ap": 14354.626110600002,
+        "other_operating_liabilities": 35816.76693900001,
+        "debt": 8376.0,
+        "equity": 87288.225271,
+        "assets": 145835.6183206,
+        "liabilities_and_equity": 145835.6183206,
+        "balance_check": 0.0
+      },
+      {
+        "year": 2027,
+        "revenue": 110515.85200000001,
+        "growth": 0.08026500133571979,
+        "ebit_margin": 0.06690472783940532,
+        "segment_revenue": {
+          "auto": 75922.392,
+          "energy": 19156.5,
+          "services": 15436.960000000003
+        },
+        "segment_gross_profit": {
+          "auto": 13817.875344,
+          "energy": 5746.95,
+          "services": 1312.1416000000004
+        },
+        "gross_profit": 20876.966944,
+        "rd": 6851.982824000001,
+        "sga": 6630.951120000001,
+        "ebit": 7394.0329999999985,
+        "nopat": 5397.644089999999,
+        "da": 8396.198943329999,
+        "capex": 8841.268160000001,
+        "change_nwc": 573.6005946891019,
+        "cash_from_operations": 13220.242438640897,
+        "fcff": 4378.974278640895,
+        "cash": 9937.962798692954,
+        "investments": 27546.0,
+        "ar": 5337.915651600001,
+        "inventory": 14293.104411669045,
+        "other_operating_assets": 42117.5911972,
+        "ppe": 55938.78331667,
+        "ap": 15417.888229632,
+        "other_operating_liabilities": 38691.59978520001,
+        "debt": 8376.0,
+        "equity": 92685.86936099998,
+        "assets": 155171.35737583198,
+        "liabilities_and_equity": 155171.35737583198,
+        "balance_check": 0.0
+      },
+      {
+        "year": 2028,
+        "revenue": 118420.40340000001,
+        "growth": 0.07152414117026384,
+        "ebit_margin": 0.07494917491895658,
+        "segment_revenue": {
+          "auto": 79718.51160000001,
+          "energy": 22029.975,
+          "services": 16671.916800000003
+        },
+        "segment_gross_profit": {
+          "auto": 14747.924646000001,
+          "energy": 6719.142374999999,
+          "services": 1500.4725120000003
+        },
+        "gross_profit": 22967.539533000003,
+        "rd": 7105.224204,
+        "sga": 6986.803800600001,
+        "ebit": 8875.511528400002,
+        "nopat": 6479.123415732001,
+        "da": 8463.53791581217,
+        "capex": 9473.632272,
+        "change_nwc": 553.8774384737626,
+        "cash_from_operations": 14388.78389307041,
+        "fcff": 4915.1516210704085,
+        "cash": 14853.114419763364,
+        "investments": 27546.0,
+        "ar": 5719.7054842200005,
+        "inventory": 15220.155279614797,
+        "other_operating_assets": 45130.01573574,
+        "ppe": 56948.87767285783,
+        "ap": 16417.892585124,
+        "other_operating_liabilities": 41458.98323034,
+        "debt": 8376.0,
+        "equity": 99164.99277673199,
+        "assets": 165417.868592196,
+        "liabilities_and_equity": 165417.868592196,
+        "balance_check": 0.0
+      },
+      {
+        "year": 2029,
+        "revenue": 125253.05587200003,
+        "growth": 0.057698270532998475,
+        "ebit_margin": 0.08224925870953523,
+        "segment_revenue": {
+          "auto": 82907.25206400001,
+          "energy": 24673.572,
+          "services": 17672.231808000004
+        },
+        "segment_gross_profit": {
+          "auto": 15503.656135968004,
+          "energy": 7648.80732,
+          "services": 1678.8620217600005
+        },
+        "gross_profit": 24831.325477728005,
+        "rd": 7264.677240576002,
+        "sga": 7264.677240576002,
+        "ebit": 10301.970996576001,
+        "nopat": 7520.43882750048,
+        "da": 8616.36519190339,
+        "capex": 10020.244469760002,
+        "change_nwc": 479.4802761120445,
+        "cash_from_operations": 15657.323743291825,
+        "fcff": 5637.079273531823,
+        "cash": 20490.193693295187,
+        "investments": 27546.0,
+        "ar": 6049.722598617602,
+        "inventory": 16012.451257388031,
+        "other_operating_assets": 47733.93959281921,
+        "ppe": 58352.75695071445,
+        "ap": 17272.537627814785,
+        "other_operating_liabilities": 43851.09486078721,
+        "debt": 8376.0,
+        "equity": 106685.43160423248,
+        "assets": 176185.06409283448,
+        "liabilities_and_equity": 176185.06409283448,
+        "balance_check": 0.0
+      },
+      {
+        "year": 2030,
+        "revenue": 131091.24222432,
+        "growth": 0.04661112905928788,
+        "ebit_margin": 0.09014039149309722,
+        "segment_revenue": {
+          "auto": 85394.46962592001,
+          "energy": 27140.929200000002,
+          "services": 18555.843398400004
+        },
+        "segment_gross_profit": {
+          "auto": 16224.949228924803,
+          "energy": 8549.392698000001,
+          "services": 1855.5843398400004
+        },
+        "gross_profit": 26629.926266764804,
+        "rd": 7341.109564561921,
+        "sga": 7472.200806786241,
+        "ebit": 11816.615895416642,
+        "nopat": 8626.129603654148,
+        "da": 8828.772126643096,
+        "capex": 10487.299377945601,
+        "change_nwc": 412.27967943804833,
+        "cash_from_operations": 17042.622050859194,
+        "fcff": 6555.322672913593,
+        "cash": 27045.51636620878,
+        "investments": 27546.0,
+        "ar": 6331.706999434657,
+        "inventory": 16656.571475971818,
+        "other_operating_assets": 49958.87241168835,
+        "ppe": 60011.284202016956,
+        "ap": 17967.346344699494,
+        "other_operating_liabilities": 45895.04390273444,
+        "debt": 8376.0,
+        "equity": 115311.56120788661,
+        "assets": 187549.95145532055,
+        "liabilities_and_equity": 187549.95145532055,
+        "balance_check": 0.0
+      }
+    ],
+    "fcff": [
+      -10954.011479947942,
+      4378.974278640895,
+      4915.1516210704085,
+      5637.079273531823,
+      6555.322672913593
+    ],
+    "valuation": {
+      "pv_explicit_fcff": 5076.167093182487,
+      "terminal_value": 83990.07174670542,
+      "pv_terminal": 50981.96402039766,
+      "enterprise_value": 56058.131113580144,
+      "terminal_value_share": 0.9094481568981029,
+      "equity_value": 91013.13111358014,
+      "value_per_share": 25.79737276462022
+    },
+    "checks": {
+      "base_year_reconciles_to_ledger": true,
+      "balance_sheet_max_abs_error": 0.0,
+      "cash_flow_ties_to_cash": true,
+      "bridge_reconciles": true,
+      "all_values_finite": true
+    }
+  },
+  "sensitivity_grid": [
+    {
+      "wacc": 0.085,
+      "terminal_growth": 0.015,
+      "value_per_share": 29.49777975787831
+    },
+    {
+      "wacc": 0.085,
+      "terminal_growth": 0.025,
+      "value_per_share": 32.690032393833604
+    },
+    {
+      "wacc": 0.085,
+      "terminal_growth": 0.03,
+      "value_per_share": 34.72146588944151
+    },
+    {
+      "wacc": 0.105,
+      "terminal_growth": 0.015,
+      "value_per_share": 24.066425292364524
+    },
+    {
+      "wacc": 0.105,
+      "terminal_growth": 0.025,
+      "value_per_share": 25.79737276462022
+    },
+    {
+      "wacc": 0.105,
+      "terminal_growth": 0.03,
+      "value_per_share": 26.83594124797364
+    },
+    {
+      "wacc": 0.125,
+      "terminal_growth": 0.015,
+      "value_per_share": 20.650068763628276
+    },
+    {
+      "wacc": 0.125,
+      "terminal_growth": 0.025,
+      "value_per_share": 21.704607949530565
+    },
+    {
+      "wacc": 0.125,
+      "terminal_growth": 0.03,
+      "value_per_share": 22.31513063610558
+    }
+  ],
+  "one_at_a_time": [
+    {
+      "driver": "revenue_growth_shift",
+      "case": "low",
+      "input": -0.03,
+      "final_year_ebit": 10282.222495324058,
+      "final_year_fcff": 6786.63997107676,
+      "value_per_share": 26.624943128107116
+    },
+    {
+      "driver": "revenue_growth_shift",
+      "case": "base",
+      "input": 0.0,
+      "final_year_ebit": 11816.615895416642,
+      "final_year_fcff": 6555.322672913593,
+      "value_per_share": 25.79737276462022
+    },
+    {
+      "driver": "revenue_growth_shift",
+      "case": "high",
+      "input": 0.03,
+      "final_year_ebit": 13529.49522800199,
+      "final_year_fcff": 6248.701422219259,
+      "value_per_share": 24.76678905708462
+    },
+    {
+      "driver": "segment_margin_shift",
+      "case": "low",
+      "input": -0.02,
+      "final_year_ebit": 9194.791050930242,
+      "final_year_fcff": 4642.855681287492,
+      "value_per_share": 19.791675712857067
+    },
+    {
+      "driver": "segment_margin_shift",
+      "case": "base",
+      "input": 0.0,
+      "final_year_ebit": 11816.615895416642,
+      "final_year_fcff": 6555.322672913593,
+      "value_per_share": 25.79737276462022
+    },
+    {
+      "driver": "segment_margin_shift",
+      "case": "high",
+      "input": 0.02,
+      "final_year_ebit": 14438.440739903046,
+      "final_year_fcff": 8467.789664539712,
+      "value_per_share": 31.803069816383424
+    }
+  ],
+  "named_scenarios": [
+    {
+      "case": "Downside",
+      "causal_rationale": "Demand/price pressure and AI/factory spend delay margin recovery; reinvestment remains heavy.",
+      "assumptions": {
+        "revenue_growth_shift": -0.02,
+        "segment_margin_shift": -0.02,
+        "wacc": 0.115,
+        "terminal_growth": 0.02,
+        "tax_rate": 0.27,
+        "cash": 16513.0,
+        "short_term_investments": 27546.0,
+        "debt_and_finance_leases": 8376.0,
+        "redeemable_nci": 58.0,
+        "nci": 670.0,
+        "diluted_shares": 3528.0
+      },
+      "value_per_share": 18.584962526869372,
+      "enterprise_value": 30612.747794795137,
+      "committee_action": "Do not initiate"
+    },
+    {
+      "case": "Base",
+      "causal_rationale": "Moderate revenue growth and a gradual, execution-dependent margin recovery.",
+      "assumptions": {
+        "revenue_growth_shift": 0.0,
+        "segment_margin_shift": 0.0,
+        "wacc": 0.105,
+        "terminal_growth": 0.025,
+        "tax_rate": 0.27,
+        "cash": 16513.0,
+        "short_term_investments": 27546.0,
+        "debt_and_finance_leases": 8376.0,
+        "redeemable_nci": 58.0,
+        "nci": 670.0,
+        "diluted_shares": 3528.0
+      },
+      "value_per_share": 25.79737276462022,
+      "enterprise_value": 56058.131113580144,
+      "committee_action": "Watch/defer; do not initiate at the retained market reference"
+    },
+    {
+      "case": "Upside",
+      "causal_rationale": "Energy/services mix and operating leverage support faster growth and margin recovery, with lower perceived risk.",
+      "assumptions": {
+        "revenue_growth_shift": 0.02,
+        "segment_margin_shift": 0.02,
+        "wacc": 0.095,
+        "terminal_growth": 0.03,
+        "tax_rate": 0.27,
+        "cash": 16513.0,
+        "short_term_investments": 27546.0,
+        "debt_and_finance_leases": 8376.0,
+        "redeemable_nci": 58.0,
+        "nci": 670.0,
+        "diluted_shares": 3528.0
+      },
+      "value_per_share": 37.292439021147636,
+      "enterprise_value": 96612.72486660886,
+      "committee_action": "Watch/defer; do not initiate at the retained market reference"
+    }
+  ],
+  "reverse_dcf": {
+    "market_reference_price": 367.95,
+    "implied_terminal_growth": 0.10151614860937702,
+    "base_terminal_growth": 0.025,
+    "within_approved_range": false
+  },
+  "validation": {
+    "known_answer": {
+      "value_per_share": 27.497370398196836,
+      "expected": 27.4974,
+      "passes_cent": true
+    },
+    "wacc_monotonicity": true,
+    "terminal_growth_monotonicity": true,
+    "changed_input_margin_plus_100bp": {
+      "base": 25.79737276462022,
+      "changed": 28.800221290501792,
+      "direction_passes": true
+    },
+    "invalid_input_fails_loudly": true,
+    "articulation": {
+      "base_year_reconciles_to_ledger": true,
+      "balance_sheet_max_abs_error": 0.0,
+      "cash_flow_ties_to_cash": true,
+      "bridge_reconciles": true,
+      "all_values_finite": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+item,classification,value_and_unit,period_or_as_of_date,primary_source,definition_or_treatment,risk_or_limitation
+Revenue,reported fact,94827 USD millions,FY2025,Tesla Form 10-K filed 2026-01-28 https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm,Final 10-K historical income-statement anchor used in model; 97690 is FY2024 revenue,Reconciled to final filing on 2026-10-19
+EBIT,reported fact,4355 USD millions,FY2025,Tesla 2025 Form 10-K p50 line 1395,Income from operations used before financing claims,Includes items requiring normalization review
+Tax provision,reported fact,1423 USD millions,FY2025,Tesla 2025 Form 10-K p50 lines 1399-1400,Historical anchor for 26.96 percent GAAP ETR,Not a separately disclosed operating tax rate
+D and A and impairment,reported fact,6148 USD millions,FY2025,Tesla 2025 Form 10-K p53 line 1489,Historical cash-flow add-back reference,Model assumes 6 percent of revenue prospectively
+Capex,reported fact,8527 USD millions,FY2025,Tesla 2025 Form 10-K p53 line 1505,Historical reinvestment reference,Model assumes 10 percent of revenue prospectively
+Cash and cash equivalents,reported fact,16513 USD millions,2025-12-31,Tesla 2025 Form 10-K p49 line 1321,Added in initial EV-to-equity bridge,May include required operating liquidity
+Short-term investments,reported fact,27546 USD millions,2025-12-31,Tesla 2025 Form 10-K p49 line 1322,Added in initial EV-to-equity bridge,May include operating liquidity and tax consequences
+Debt and finance leases,reported fact,8376 USD millions,2025-12-31,Tesla 2025 Form 10-K p49 and Note 9,1640 current plus 6736 long-term carrying value; deducted as financing claims,Must remain consistent with consolidated FCFF
+Redeemable NCI,reported fact,58 USD millions,2025-12-31,Tesla 2025 Form 10-K p49 line 1349,Deducted before common equity,May change with VIE liquidation provisions
+Noncontrolling interests,reported fact,670 USD millions,2025-12-31,Tesla 2025 Form 10-K p49 line 1358,Deducted before common equity,Deduct only if associated cash flows are in EV
+Diluted weighted-average shares,reported fact,3528 million shares,FY2025,Tesla 2025 Form 10-K p50 line 1410,Per-share convention for DCF,Not a point-in-time share count
+August adjusted close,reported fact,367.95 USD per share,2026-08-31,Yahoo Finance history retained in project1_edition_a_tsla.md,Screen/market reference only,Needs raw download retained for final audit
+FY2026-FY2030 growth,forecast assumption,5 6 7 6 5 percent,Forecast period,Analyst assumption in src/model.py,Linked annual revenue driver,Requires filing-based revision
+FY2026-FY2030 EBIT margin,forecast assumption,6 7 8 9 10 percent,Forecast period,Analyst assumption in src/model.py,Linked annual operating-profit driver,Main sensitivity; no management guidance claim

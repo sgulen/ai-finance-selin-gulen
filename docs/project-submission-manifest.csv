@@ -1,0 +1,13 @@
+item,required,location_or_url,title,duration_or_as_of,timestamp_index,access_checked,frozen_or_commit_id,notes
+Research-Evolution.pdf,yes,submission/Research-Evolution.pdf,Research Evolution TSLA,2026-10-19,,no,STUDENT MUST ENTER,Contains labeled retrospective recollection because original Edition A and receipt are unavailable; do not represent it as original
+Repository,yes,STUDENT MUST ENTER REPOSITORY URL,TSLA Valuation Workbench,2026-10-19,,no,STUDENT MUST ENTER,Grant instructional-team access if private
+Visible executed output,yes,output/visible_output.md,TSLA Visible Executed Output,2025-12-31,,yes,generated locally,Contains inputs as of date and decision without execution
+Decision memo or deck,yes,submission/Decision-Memo.pdf,TSLA Decision Memo,2026-10-19,,no,generated locally,Source memo now uses the segmented-pro-forma DCF, causal cases, reverse-DCF diagnostic, and qualified multiples; regenerate after videos and source-download preservation
+Validation-and-AI-Use.pdf,yes,submission/Validation-and-AI-Use.pdf,Validation and AI Use TSLA,2026-10-19,,no,STUDENT MUST ENTER COMMIT,Complete human AI-off precommit fields cold-run log and historical-price source preservation before freezing
+Video 1,yes,STUDENT MUST ENTER UNLISTED URL,TSLA Research Evolution and AI Check,UNDER 3:00,see transcript-video-1.txt,no,STUDENT MUST ENTER,Webcam visible and captions enabled
+Transcript Video 1,yes,docs/transcript-video-1.txt,Corrected Transcript Video 1,UNDER 3:00,see timestamps,no,STUDENT MUST ENTER,Replace placeholders after actual recording
+Video 2,yes,STUDENT MUST ENTER UNLISTED URL,TSLA Codebase Walkthrough and Validation,UNDER 5:00,see transcript-video-2.txt,no,STUDENT MUST ENTER,Webcam visible and captions enabled
+Transcript Video 2,yes,docs/transcript-video-2.txt,Corrected Transcript Video 2,UNDER 5:00,see timestamps,no,STUDENT MUST ENTER,Replace placeholders after actual recording
+Video 3,yes,STUDENT MUST ENTER UNLISTED URL,TSLA Committee Presentation and Live Demo,UNDER 5:00,see transcript-video-3.txt,no,STUDENT MUST ENTER,Webcam visible and captions enabled
+Transcript Video 3,yes,docs/transcript-video-3.txt,Corrected Transcript Video 3,UNDER 5:00,see timestamps,no,STUDENT MUST ENTER,Replace placeholders after actual recording
+Optional deployed output,no,,Not deployed,N/A,,no,,Local runnable app is required; hosting optional
