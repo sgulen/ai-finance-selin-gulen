@@ -1,6 +1,6 @@
 item,required,location_or_url,title,duration_or_as_of,timestamp_index,access_checked,frozen_or_commit_id,notes
-Research-Evolution.pdf,yes,submission/Research-Evolution.pdf,Research Evolution TSLA,2026-10-19,,no,STUDENT MUST ENTER,Contains labeled retrospective recollection because original Edition A and receipt are unavailable; do not represent it as original
-Repository,yes,STUDENT MUST ENTER REPOSITORY URL,TSLA Valuation Workbench,2026-10-19,,no,STUDENT MUST ENTER,Grant instructional-team access if private
+Research-Evolution.pdf,yes,submission/Research-Evolution.pdf,Research Evolution TSLA,2026-10-19,,no,dc8444a,Contains labeled retrospective recollection because original Edition A and receipt are unavailable; do not represent it as original
+Repository,yes,STUDENT MUST ENTER REPOSITORY URL,TSLA Valuation Workbench,2026-10-19,,no,dc8444a,Grant instructional-team access if private
 Visible executed output,yes,output/visible_output.md,TSLA Visible Executed Output,2025-12-31,,yes,generated locally,Contains inputs as of date and decision without execution
 Decision memo or deck,yes,submission/Decision-Memo.pdf,TSLA Decision Memo,2026-10-19,,no,generated locally,Source memo now uses the segmented-pro-forma DCF, causal cases, reverse-DCF diagnostic, and qualified multiples; regenerate after videos and source-download preservation
 Validation-and-AI-Use.pdf,yes,submission/Validation-and-AI-Use.pdf,Validation and AI Use TSLA,2026-10-19,,no,STUDENT MUST ENTER COMMIT,Complete human AI-off precommit fields cold-run log and historical-price source preservation before freezing
