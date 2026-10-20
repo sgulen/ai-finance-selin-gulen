@@ -8,7 +8,7 @@ REPOSITORY COMMIT/FROZEN VERSION: STUDENT MUST ENTER
 
 [00:00] Hi, I am presenting my Project 1 research evolution for Tesla. My recommendation is watch/defer and do not initiate a position at the retained September 10, 2026 market reference. This is an educational analysis, not investment advice.
 
-[00:15] My intended user is a buy-side equity-research committee with no current position. My original Edition A screened TSLA out because it failed the stated maximum-drawdown and positive-month gates. I preserved that file unchanged. [State the truthful Brightspace receipt status shown in the research-evolution record.]
+[00:15] My intended user is a buy-side equity-research committee with no current position. My original Edition A screened TSLA out because it failed the stated maximum-drawdown and positive-month gates. I preserved that file unchanged.
 
 [00:35] In Edition B, the action is still negative, but the reason is stronger and different. I built a five-year segmented-pro-forma FCFF valuation using FY2025 financial statements and a December 31, 2025 enterprise-to-equity bridge. The base result is $25.80 per diluted share, versus the retained $367.95 market reference. My WACC and terminal-growth stress range is $20.65 to $34.72.
 
