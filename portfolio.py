@@ -1,6 +1,8 @@
 """Calculate return, volatility, and reserve liquidity for three portfolios."""
 
+import csv
 import math
+import statistics
 import sys
 
 
@@ -42,6 +44,12 @@ CORRELATIONS = {
 
 OBJECTIVE_RETURN = 0.065
 RESERVE_ELIGIBLE = {"Treasury bills", "Treasury 10-year note"}
+TICKERS = {
+    "Treasury bills": "BIL",
+    "Treasury 10-year note": "IEF",
+    "Investment-grade bond fund": "LQD",
+    "Global equity index fund": "ACWI",
+}
 # ===========================================================================
 
 
@@ -129,6 +137,122 @@ def portfolio_volatility(weights, covariance, names):
 def reserve_eligible_weight(weights, reserve_eligible):
     """Return the combined weight of the reserve-eligible sleeves."""
     return sum(weights[name] for name in reserve_eligible)
+
+
+def search_lowest_risk_mix(
+    sleeves,
+    correlations,
+    objective_return,
+    reserve_eligible,
+    minimum_reserve_eligible,
+    step=0.05,
+):
+    """Search long-only step-size mixes and return the eligible one with lowest volatility.
+
+    The result is a dictionary containing weights and portfolio measures, or None
+    when no evaluated mix meets both constraints.
+    """
+    if step <= 0 or not math.isclose(1.0 / step, round(1.0 / step)):
+        raise ValueError("step must divide evenly into 100%")
+    names = sleeve_names(sleeves)
+    validate_correlations(correlations, names)
+    covariance = build_covariance_matrix(sleeves, correlations)
+    total_steps = round(1.0 / step)
+    best = None
+
+    def try_weights(position, remaining, units):
+        nonlocal best
+        if position == len(names) - 1:
+            candidate_units = units + [remaining]
+            weights = {
+                name: unit_count * step
+                for name, unit_count in zip(names, candidate_units)
+            }
+            expected = portfolio_return(weights, sleeves)
+            reserve_weight = reserve_eligible_weight(weights, reserve_eligible)
+            if expected + 1e-12 < objective_return or reserve_weight + 1e-12 < minimum_reserve_eligible:
+                return
+            volatility = portfolio_volatility(weights, covariance, names)
+            result = {
+                "weights": weights,
+                "expected_return": expected,
+                "volatility": volatility,
+                "reserve_eligible_weight": reserve_weight,
+            }
+            if best is None or volatility < best["volatility"] - 1e-12:
+                best = result
+            return
+        for unit_count in range(remaining + 1):
+            try_weights(position + 1, remaining - unit_count, units + [unit_count])
+
+    try_weights(0, total_steps, [])
+    return best
+
+
+def estimate_from_prices(csv_source, last_36_months=False):
+    """Estimate annualized return, volatility, and correlations from monthly prices.
+
+    Expected returns are historical annualized estimates (mean monthly return times
+    12), not forecasts. ``csv_source`` may be a file path or a text file object.
+    """
+    close_after_read = False
+    if isinstance(csv_source, (str, bytes)):
+        source = open(csv_source, "r", newline="", encoding="utf-8")
+        close_after_read = True
+    else:
+        source = csv_source
+        if hasattr(source, "seek"):
+            source.seek(0)
+    try:
+        rows = list(csv.DictReader(source))
+    finally:
+        if close_after_read:
+            source.close()
+    if not rows or not rows[0] or "date" not in rows[0]:
+        raise ValueError("CSV must have a date column followed by one or more tickers")
+    tickers = [column for column in rows[0] if column != "date"]
+    if not tickers:
+        raise ValueError("CSV must contain at least one price column")
+    try:
+        prices = {ticker: [float(row[ticker]) for row in rows] for ticker in tickers}
+    except (KeyError, TypeError, ValueError) as error:
+        raise ValueError("all price cells must be numeric") from error
+    if any(price <= 0 for series in prices.values() for price in series):
+        raise ValueError("prices must be positive")
+    monthly_returns = {
+        ticker: [series[index] / series[index - 1] - 1.0 for index in range(1, len(series))]
+        for ticker, series in prices.items()
+    }
+    if last_36_months:
+        monthly_returns = {ticker: series[-36:] for ticker, series in monthly_returns.items()}
+    observations = len(next(iter(monthly_returns.values())))
+    if observations < 2:
+        raise ValueError("CSV needs at least three monthly prices (37 for a 36-month estimate)")
+    expected_returns = {
+        ticker: statistics.fmean(series) * 12.0 for ticker, series in monthly_returns.items()
+    }
+    volatilities = {
+        ticker: statistics.stdev(series) * math.sqrt(12.0) for ticker, series in monthly_returns.items()
+    }
+    correlations = {}
+    for left in tickers:
+        correlations[left] = {}
+        for right in tickers:
+            if left == right:
+                correlations[left][right] = 1.0
+                continue
+            left_deviations = [value - statistics.fmean(monthly_returns[left]) for value in monthly_returns[left]]
+            right_deviations = [value - statistics.fmean(monthly_returns[right]) for value in monthly_returns[right]]
+            covariance = sum(a * b for a, b in zip(left_deviations, right_deviations)) / (observations - 1)
+            denominator = statistics.stdev(monthly_returns[left]) * statistics.stdev(monthly_returns[right])
+            correlations[left][right] = covariance / denominator if denominator else 0.0
+    return {
+        "tickers": tickers,
+        "expected_returns": expected_returns,
+        "volatilities": volatilities,
+        "correlations": correlations,
+        "observations": observations,
+    }
 
 
 def format_weights(weights, names):
