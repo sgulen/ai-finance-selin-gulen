@@ -20,8 +20,7 @@ FACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json"
 USER_AGENT_ENV = "SEC_USER_AGENT"
 ANNUAL_MIN_DAYS = 330
 ANNUAL_MAX_DAYS = 400
-CATHIE_REVENUE_GROWTH_THRESHOLD = 0.15
-CATHIE_R_AND_D_TO_REVENUE_THRESHOLD = 0.05
+GRAHAM_CURRENT_RATIO_MIN = 2.0
 BURRY_LIABILITIES_TO_EQUITY_MAX = 2.0
 
 
@@ -189,61 +188,48 @@ def _buffett_checks(rows: list[dict[str, Any]]) -> dict[str, str]:
     }
 
 
-def _revenue_growth_per_year(rows: list[dict[str, Any]]) -> float | None:
-    """Return the Lab 19 first-to-last revenue growth rate over four years."""
+def _graham_checks(rows: list[dict[str, Any]]) -> dict[str, str]:
+    """Apply Graham's liquidity and earnings checks to the shared record."""
 
-    if len(rows) != 5:
-        return None
-    first_revenue = rows[0]["revenue"]
-    last_revenue = rows[-1]["revenue"]
-    if (
-        first_revenue is None
-        or last_revenue is None
-        or first_revenue <= 0
-        or last_revenue <= 0
-    ):
-        return None
-    return (last_revenue / first_revenue) ** (1 / 4) - 1
+    latest = rows[-1] if rows else {}
+    current_ratio = latest.get("current_ratio")
+    net_income = [row["net_income"] for row in rows]
+    return {
+        f"Current ratio of {GRAHAM_CURRENT_RATIO_MIN:g} or more, latest year": (
+            "pass"
+            if current_ratio is not None and current_ratio >= GRAHAM_CURRENT_RATIO_MIN
+            else "not known"
+            if current_ratio is None
+            else "fail"
+        ),
+        "Net income positive every year": (
+            "pass"
+            if _all_known(net_income)
+            and all(value > 0 for value in net_income if value is not None)
+            else "not known"
+            if not _all_known(net_income)
+            else "fail"
+        ),
+        "Net income grew from first to last year": (
+            "pass"
+            if _all_known(net_income) and net_income[-1] > net_income[0]
+            else "not known"
+            if not _all_known(net_income)
+            else "fail"
+        ),
+    }
 
 
 def _panel_checks(rows: list[dict[str, Any]]) -> dict[str, dict[str, str]]:
     """Apply the three investors' stated screens to one shared five-year record."""
 
-    revenue_growth = _revenue_growth_per_year(rows)
     latest = rows[-1] if rows else {}
-    latest_r_and_d_ratio = latest.get("r_and_d_to_revenue")
     latest_liabilities_ratio = latest.get("liabilities_to_equity")
     cfo = [row["cash_from_operations"] for row in rows]
     net_income = [row["net_income"] for row in rows]
-    growth_label = (
-        "Revenue grew "
-        f"{CATHIE_REVENUE_GROWTH_THRESHOLD * 100:g}% or more a year, first year to last"
-    )
-    r_and_d_label = (
-        "R&D "
-        f"{CATHIE_R_AND_D_TO_REVENUE_THRESHOLD * 100:g}% or more of revenue, latest year"
-    )
-
     return {
         "Buffett": _buffett_checks(rows),
-        "Cathie Wood": {
-            growth_label: (
-                "pass"
-                if revenue_growth is not None
-                and revenue_growth >= CATHIE_REVENUE_GROWTH_THRESHOLD
-                else "not known"
-                if revenue_growth is None
-                else "fail"
-            ),
-            r_and_d_label: (
-                "pass"
-                if latest_r_and_d_ratio is not None
-                and latest_r_and_d_ratio >= CATHIE_R_AND_D_TO_REVENUE_THRESHOLD
-                else "not known"
-                if latest_r_and_d_ratio is None
-                else "fail"
-            ),
-        },
+        "Graham": _graham_checks(rows),
         "Burry": {
             "Operating cash flow at least net income every year": (
                 "pass"
@@ -295,8 +281,9 @@ def analyze_company_facts(ticker: str, user_agent: str) -> dict[str, Any]:
     )
     equity, equity_tag = _metric_map(facts, "StockholdersEquity", None, flow=False)
     liabilities, liabilities_tag = _metric_map(facts, "Liabilities", None, flow=False)
-    research_and_development, research_and_development_tag = _metric_map(
-        facts, "ResearchAndDevelopmentExpense", None, flow=True
+    assets_current, assets_current_tag = _metric_map(facts, "AssetsCurrent", None, flow=False)
+    liabilities_current, liabilities_current_tag = _metric_map(
+        facts, "LiabilitiesCurrent", None, flow=False
     )
 
     # Take fiscal periods from the union.  A missing revenue tag must not make
@@ -309,7 +296,8 @@ def analyze_company_facts(ticker: str, user_agent: str) -> dict[str, Any]:
             capex,
             equity,
             liabilities,
-            research_and_development,
+            assets_current,
+            liabilities_current,
         )
     )[-5:]
     if not fiscal_ends:
@@ -323,7 +311,8 @@ def analyze_company_facts(ticker: str, user_agent: str) -> dict[str, Any]:
         capex_value = _millions(capex.get(fiscal_end))
         equity_value = _millions(equity.get(fiscal_end))
         liabilities_value = _millions(liabilities.get(fiscal_end))
-        research_and_development_value = _millions(research_and_development.get(fiscal_end))
+        assets_current_value = _millions(assets_current.get(fiscal_end))
+        liabilities_current_value = _millions(liabilities_current.get(fiscal_end))
         roe = (
             net_income_value / equity_value
             if net_income_value is not None
@@ -336,11 +325,11 @@ def analyze_company_facts(ticker: str, user_agent: str) -> dict[str, Any]:
             if cfo_value is not None and capex_value is not None
             else None
         )
-        r_and_d_to_revenue = (
-            research_and_development_value / revenue_value
-            if research_and_development_value is not None
-            and revenue_value is not None
-            and revenue_value > 0
+        current_ratio = (
+            assets_current_value / liabilities_current_value
+            if assets_current_value is not None
+            and liabilities_current_value is not None
+            and liabilities_current_value > 0
             else None
         )
         liabilities_to_equity = (
@@ -357,10 +346,11 @@ def analyze_company_facts(ticker: str, user_agent: str) -> dict[str, Any]:
                 "capex": capex_value,
                 "equity": equity_value,
                 "liabilities": liabilities_value,
-                "research_and_development": research_and_development_value,
+                "assets_current": assets_current_value,
+                "liabilities_current": liabilities_current_value,
                 "roe": roe,
                 "owner_earnings": owner_earnings,
-                "r_and_d_to_revenue": r_and_d_to_revenue,
+                "current_ratio": current_ratio,
                 "liabilities_to_equity": liabilities_to_equity,
             }
         )
@@ -372,12 +362,12 @@ def analyze_company_facts(ticker: str, user_agent: str) -> dict[str, Any]:
         "capex": capex_tag or "not found",
         "equity": equity_tag or "not found",
         "liabilities": liabilities_tag or "not found",
-        "research_and_development": research_and_development_tag or "not found",
+        "assets_current": assets_current_tag or "not found",
+        "liabilities_current": liabilities_current_tag or "not found",
         "roe": "NetIncomeLoss / StockholdersEquity",
         "owner_earnings": "NetCashProvidedByUsedInOperatingActivities - capex",
-        "r_and_d_to_revenue": "ResearchAndDevelopmentExpense / revenue",
+        "current_ratio": "AssetsCurrent / LiabilitiesCurrent",
         "liabilities_to_equity": "Liabilities / StockholdersEquity",
-        "revenue_growth_per_year": "(last revenue / first revenue)^(1/4) - 1",
     }
     return {
         "ticker": clean_ticker,
@@ -388,10 +378,8 @@ def analyze_company_facts(ticker: str, user_agent: str) -> dict[str, Any]:
         "tags": tags,
         "checks": _buffett_checks(rows),
         "panel_checks": _panel_checks(rows),
-        "revenue_growth_per_year": _revenue_growth_per_year(rows),
         "thresholds": {
-            "cathie_revenue_growth": CATHIE_REVENUE_GROWTH_THRESHOLD,
-            "cathie_r_and_d_to_revenue": CATHIE_R_AND_D_TO_REVENUE_THRESHOLD,
+            "graham_current_ratio_min": GRAHAM_CURRENT_RATIO_MIN,
             "burry_liabilities_to_equity_max": BURRY_LIABILITIES_TO_EQUITY_MAX,
         },
     }
@@ -423,17 +411,17 @@ def print_analysis(analysis: dict[str, Any]) -> None:
         ("Capital expenditure", "capex"),
         ("Equity", "equity"),
         ("Liabilities", "liabilities"),
-        ("Research and development", "research_and_development"),
+        ("Current assets", "assets_current"),
+        ("Current liabilities", "liabilities_current"),
         ("ROE", "roe"),
         ("Owner earnings", "owner_earnings"),
-        ("R&D / revenue", "r_and_d_to_revenue"),
+        ("Current ratio", "current_ratio"),
         ("Liabilities / equity", "liabilities_to_equity"),
-        ("Revenue growth a year", "revenue_growth_per_year"),
     ):
         print(f"- {label}: {analysis['tags'][key]}")
     print()
     print(
-        "Fiscal end | Revenue | Net income | CFO | Capex | Equity | Liabilities | R&D | ROE | Owner earnings"
+        "Fiscal end | Revenue | Net income | CFO | Capex | Equity | Liabilities | Current assets | Current liabilities | ROE | Owner earnings"
     )
     for row in analysis["rows"]:
         print(
@@ -446,7 +434,8 @@ def print_analysis(analysis: dict[str, Any]) -> None:
                     format_millions(row["capex"]),
                     format_millions(row["equity"]),
                     format_millions(row["liabilities"]),
-                    format_millions(row["research_and_development"]),
+                    format_millions(row["assets_current"]),
+                    format_millions(row["liabilities_current"]),
                     format_percent(row["roe"]),
                     format_millions(row["owner_earnings"]),
                 )
@@ -455,17 +444,12 @@ def print_analysis(analysis: dict[str, Any]) -> None:
     print()
     print()
     print("Panel facts")
-    print("Fiscal end | R&D / revenue | Liabilities / equity")
+    print("Fiscal end | Current ratio | Liabilities / equity")
     for row in analysis["rows"]:
         print(
-            f"{row['fiscal_end']} | {format_percent(row['r_and_d_to_revenue'])} | "
+            f"{row['fiscal_end']} | {format_ratio(row['current_ratio'])} | "
             f"{format_ratio(row['liabilities_to_equity'])}"
         )
-    print(
-        "Revenue growth a year, "
-        f"{analysis['rows'][0]['fiscal_end']} to {analysis['rows'][-1]['fiscal_end']}: "
-        f"{format_percent(analysis['revenue_growth_per_year'], digits=2)}"
-    )
     print()
     print("Panel checks")
     for investor, checks in analysis["panel_checks"].items():
