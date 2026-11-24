@@ -22,7 +22,7 @@ The application uses monthly adjusted-close prices for BIL, IEF, LQD, and ACWI i
 ## Locked Changed-Input Record 
 
 - Date and time of prediction: 11/23/2026 10:13 PM, Eastern Time
-- GitHub commit URL created before the run:
+- GitHub commit URL created before the run: https://github.com/sgulen/ai-finance-selin-gulen/commit/ee531db2c349f0a296749bef6377bd304e572240
 - Input changed: Objective return
 - Old value and units: 6.50% annualized historical return estimate
 - New value and units: 7.00% annualized historical return estimate
