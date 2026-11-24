@@ -34,11 +34,24 @@ The application uses monthly adjusted-close prices for BIL, IEF, LQD, and ACWI i
 
 ### Result after the run 
 
-- Before result:
-- After result:
-- Actual effect on return, volatility, weights, and decision:
-- Did the result match your prediction?
-- Reconciliation or failure diagnosis:
+- Before result: At the 6.50% objective, the constrained portfolio
+  was 60% BIL / 40% ACWI, with a 6.84% historical annualized return
+  estimate, 6.01% annualized volatility, 60.00% reserve-eligible
+  weight, and a PASS verdict.
+- After result: At the 7.00% objective, the constrained portfolio
+  was 55% BIL / 45% ACWI, with a 7.24% historical annualized return
+  estimate, 6.74% annualized volatility, 55.00% reserve-eligible
+  weight, and a PASS verdict. IEF and LQD remained at 0.00%.
+- Actual effect on return, volatility, weights, and decision: The
+  return estimate increased by about 0.40 percentage points,
+  volatility increased by about 0.73 percentage points, ACWI increased
+  by 5 percentage points, and BIL/reserve-eligible allocation
+  decreased by 5 percentage points. The committee decision remained
+  Reject adoption and do not allocate now because the separate 36-
+  month stress sensitivity and missing loss-limit policy remain
+  unresolved.
+- Did the result match your prediction? : The results matched my prediction, as ACWI increased from 40% to 45% and BIL decreased from 60% to 55%. Historical annualized return estimate increased from 6.84% to 7.24%, close to my 7.3% prediction. Annualized volatility increased from 6.01% to 6.74%, close to my 6.8% prediction.
+- Reconciliation or failure diagnosis: Return exceeded 7% due to the 5 percentage point optimizer search increments. All four implemented mandate checks passed. This portfolio PASS does not resolve stress or loss-limit policy. Since the output does not show a new stress result or a new committee decision, it does not resolve reasons for rejection.
 
 ## AI-use disclosure
 
