@@ -51,7 +51,7 @@ The application uses monthly adjusted-close prices for BIL, IEF, LQD, and ACWI i
   month stress sensitivity and missing loss-limit policy remain
   unresolved.
 - Did the result match your prediction? : The results matched my prediction, as ACWI increased from 40% to 45% and BIL decreased from 60% to 55%. Historical annualized return estimate increased from 6.84% to 7.24%, close to my 7.3% prediction. Annualized volatility increased from 6.01% to 6.74%, close to my 6.8% prediction.
-- Reconciliation or failure diagnosis: Return exceeded 7% due to the 5 percentage point optimizer search increments. All four implemented mandate checks passed. This portfolio PASS does not resolve stress or loss-limit policy. Since the output does not show a new stress result or a new committee decision, it does not resolve reasons for rejection.
+- Reconciliation or failure diagnosis: Return exceeded 7% due to the 5 percentage point optimizer search increments. All four implemented mandate checks passed. This portfolio PASS does not resolve stress or loss-limit policy. This changed-input run tests the return-objective sensitivity; it does not replace the separately documented 36-month estimation-window stress. Therefore, it does not remove the reasons for the committee’s rejection.
 
 ## AI-use disclosure
 
