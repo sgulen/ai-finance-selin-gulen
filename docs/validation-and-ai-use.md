@@ -56,7 +56,7 @@ Supporting evidence: `locked-input-result-7pct.png`
 
 ## AI-use disclosure
 
-- Tool/model: OpenAI Codex.
+- Tool/model: OpenAI Codex gpt-5.6-terra medium fast
 - Interaction date: 2026-11-23.
 - Material uses: code organization, app structure, test scaffolding, document structure, and consistency checks.
 - Checks performed: results are generated from `project_results.py`, exported to `visible-output.json`, and covered by automated baseline, known-answer, and failure tests.
