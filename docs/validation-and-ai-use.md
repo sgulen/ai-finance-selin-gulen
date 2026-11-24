@@ -32,7 +32,7 @@ The application uses monthly adjusted-close prices for BIL, IEF, LQD, and ACWI i
 - Prediction of the weight change: ACWI will increase from 40% to around 45% and BIL will decrease from 60% to about 55%. IEF and LQD will remain around zero.
 - Prediction of the committee-decision effect:
 
-### Result after the run
+### Result after the run 
 
 - Before result:
 - After result:
