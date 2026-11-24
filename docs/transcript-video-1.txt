@@ -1,0 +1,20 @@
+Video Link: https://youtu.be/q7nBE193nLw?si=FqobbHMarpLhRiJD
+Date and Time: 11/24/2026, 1:21 AM eastern time 
+
+I used OpenAI Codex to help organize and test this project's code, and I checked the material outputs against the data, code, and tests.
+
+The analysis and decision are mine. This is for educational purposes only and is not investment advice.
+
+This is my Meridian investment-management application for an investment committee. It compares an equal-weight baseline, a 40% LQD and 60% ACWI benchmark, and a constrained lowest-volatility portfolio using BIL, IEF, LQD, and ACWI.
+
+The base constrained portfolio is 60% BIL and 40% ACWI, with a 6.84% historical return estimate and 6.01% volatility.
+
+My thinking changed because a portfolio can pass the base constraints but still be unsuitable for adoption. In the 36-month stress, the allocation changes to 85% BIL and 15% ACWI. That is a 25-percentage-point shift, above my 10-percentage-point stop trigger.
+
+Because of that stress sensitivity and the missing binding loss-limit policy, I recommend rejecting adoption and making no allocation now.
+
+Codex helped me organize the code and tests, but I checked the output myself. The known-answer test confirms the 60% BIL and 40% ACWI base case, and the failure test confirms an impossible 100% return target has no feasible portfolio.
+
+I also committed my own prediction before changing the objective from 6.5% to 7%. The result became 55% BIL and 45% ACWI, with 7.24% estimated return and 6.74% volatility. The decision still remained rejection.
+
+My conclusion is that the process is transparent and runnable, but it is not yet stable enough for committee adoption.

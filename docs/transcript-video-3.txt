@@ -1,0 +1,22 @@
+Video Link: https://youtu.be/fcfdwl8eZdM?si=PfC5eGB-r2zONmqx
+Date and Time: 11/24/2026 1:24 AM eastern time
+
+I used OpenAI Codex to help organize and test this project's code, and I checked the material outputs against the data, code, and tests.
+
+The analysis and decision are mine. This is for educational purposes only and is not investment advice.
+
+I recommend rejecting adoption and making no allocation at this time.
+
+The mandate uses BIL, IEF, LQD, and ACWI. The benchmark is 40% LQD and 60% ACWI. The objective is at least a 6.5% historical return estimate, with long-only, fully invested weights and at least 3% in BIL plus IEF.
+
+Equal weight fails the return objective. The benchmark meets the return objective but fails the reserve minimum. The constrained portfolio passes the modeled base rules at 60% BIL and 40% ACWI, with 6.84% return, 6.01% volatility, and 60% reserve eligibility.
+
+The base result is not enough. When I use only the most recent 36 monthly returns, the constrained allocation changes to 85% BIL and 15% ACWI. That is a 25-percentage-point change.
+
+My stop trigger is 10 percentage points. Since the observed shift is 25 points, the process fails the adoption condition. In addition, the committee has not defined a binding loss-limit policy.
+
+Therefore, my recommendation remains reject adoption and make no allocation now.
+
+The recommended allocation range today is 0% to 0%, because I recommend rejection rather than a pilot or capital allocation.
+
+My committee ask is no allocation or pilot until a binding loss-limit policy is defined and the revised process passes the precommitted stress test with an allocation change at or below 10 percentage points.

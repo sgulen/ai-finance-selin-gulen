@@ -1,0 +1,26 @@
+Video Link: https://youtu.be/xlxWydm7N4k?si=FWO_Eez9DH3RgPg-
+Date and Time: 11/24/2026 1:23 AM eastern time
+
+I used OpenAI Codex to help organize and test this project's code, and I checked the material outputs against the data, code, and tests.
+
+The analysis and decision are mine. This is for educational purposes only and is not investment advice.
+
+A clean user starts by creating a virtual environment, installing requirements.txt, running the tests, and using python -m streamlit run app.py.
+
+The source data is monthly adjusted-close prices for BIL, IEF, LQD, and ACWI. The as-of date is October 22, 2026, and the app excludes later observations.
+
+This is the calculation source of truth. It builds the equal-weight portfolio, the declared 40% LQD and 60% ACWI benchmark, and the constrained lowest-volatility portfolio. It also creates the 36-month stress scenario.
+
+This file displays the mandate, portfolio comparison, data card, stress run, stop condition, and committee recommendation in Streamlit.
+
+The tests check equal weights, the declared benchmark weights, the known 60% BIL and 40% ACWI result, and the impossible-objective failure case.
+
+These four automated tests passed.
+
+This file contains my Locked Changed-Input Record. I made my own prediction and committed it before changing the objective from 6.5% to 7%.
+
+At 7%, the constrained portfolio changed to 55% BIL and 45% ACWI, with 7.24% return and 6.74% volatility. The decision did not change because the separate estimation-window stress and missing loss-limit policy remain unresolved.
+
+I also performed and documented a cold run. The clean environment installed dependencies, passed four tests, and launched the application.
+
+The main limitations are the short historical sample, the 5-percentage-point optimization grid, historical estimates rather than forecasts, and the absence of a binding loss-limit policy.
