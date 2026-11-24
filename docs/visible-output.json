@@ -1,0 +1,271 @@
+{
+  "base_case": {
+    "as_of_date": "2026-10-22",
+    "observations": 59,
+    "window": "All available monthly returns",
+    "objective_return": 0.065,
+    "reserve_minimum": 0.03,
+    "signal": "Arithmetic annualized historical return estimates calculated only from monthly adjusted-close prices available through the as-of date.",
+    "portfolios": [
+      {
+        "name": "Equal weight",
+        "weights": {
+          "BIL": 0.25,
+          "IEF": 0.25,
+          "LQD": 0.25,
+          "ACWI": 0.25
+        },
+        "expected_return": 0.03352896432156534,
+        "volatility": 0.0753498155133074,
+        "reserve_eligible_weight": 0.5,
+        "checks": [
+          {
+            "rule": "Weights sum to 100%",
+            "value": 1.0,
+            "threshold": 1.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Long-only weights",
+            "value": 0.25,
+            "threshold": 0.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Historical return estimate meets objective",
+            "value": 0.03352896432156534,
+            "threshold": 0.065,
+            "status": "FAIL"
+          },
+          {
+            "rule": "Reserve-eligible allocation meets minimum",
+            "value": 0.5,
+            "threshold": 0.03,
+            "status": "PASS"
+          }
+        ],
+        "verdict": "FAIL",
+        "failed_rules": [
+          "Historical return estimate meets objective"
+        ]
+      },
+      {
+        "name": "Benchmark - 40% LQD / 60% ACWI",
+        "weights": {
+          "BIL": 0.0,
+          "IEF": 0.0,
+          "LQD": 0.4,
+          "ACWI": 0.6
+        },
+        "expected_return": 0.06768648047785446,
+        "volatility": 0.12264766663549262,
+        "reserve_eligible_weight": 0.0,
+        "checks": [
+          {
+            "rule": "Weights sum to 100%",
+            "value": 1.0,
+            "threshold": 1.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Long-only weights",
+            "value": 0.0,
+            "threshold": 0.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Historical return estimate meets objective",
+            "value": 0.06768648047785446,
+            "threshold": 0.065,
+            "status": "PASS"
+          },
+          {
+            "rule": "Reserve-eligible allocation meets minimum",
+            "value": 0.0,
+            "threshold": 0.03,
+            "status": "FAIL"
+          }
+        ],
+        "verdict": "FAIL",
+        "failed_rules": [
+          "Reserve-eligible allocation meets minimum"
+        ]
+      },
+      {
+        "name": "Constrained lowest-volatility portfolio",
+        "weights": {
+          "BIL": 0.6000000000000001,
+          "IEF": 0.0,
+          "LQD": 0.0,
+          "ACWI": 0.4
+        },
+        "expected_return": 0.06844918352479079,
+        "volatility": 0.06005504174091156,
+        "reserve_eligible_weight": 0.6000000000000001,
+        "checks": [
+          {
+            "rule": "Weights sum to 100%",
+            "value": 1.0,
+            "threshold": 1.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Long-only weights",
+            "value": 0.0,
+            "threshold": 0.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Historical return estimate meets objective",
+            "value": 0.06844918352479079,
+            "threshold": 0.065,
+            "status": "PASS"
+          },
+          {
+            "rule": "Reserve-eligible allocation meets minimum",
+            "value": 0.6000000000000001,
+            "threshold": 0.03,
+            "status": "PASS"
+          }
+        ],
+        "verdict": "PASS",
+        "failed_rules": []
+      }
+    ]
+  },
+  "stress_case": {
+    "as_of_date": "2026-10-22",
+    "observations": 36,
+    "window": "Last 36 monthly returns",
+    "objective_return": 0.065,
+    "reserve_minimum": 0.03,
+    "signal": "Arithmetic annualized historical return estimates calculated only from monthly adjusted-close prices available through the as-of date.",
+    "portfolios": [
+      {
+        "name": "Equal weight",
+        "weights": {
+          "BIL": 0.25,
+          "IEF": 0.25,
+          "LQD": 0.25,
+          "ACWI": 0.25
+        },
+        "expected_return": 0.0909594453006139,
+        "volatility": 0.056524334742543314,
+        "reserve_eligible_weight": 0.5,
+        "checks": [
+          {
+            "rule": "Weights sum to 100%",
+            "value": 1.0,
+            "threshold": 1.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Long-only weights",
+            "value": 0.25,
+            "threshold": 0.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Historical return estimate meets objective",
+            "value": 0.0909594453006139,
+            "threshold": 0.065,
+            "status": "PASS"
+          },
+          {
+            "rule": "Reserve-eligible allocation meets minimum",
+            "value": 0.5,
+            "threshold": 0.03,
+            "status": "PASS"
+          }
+        ],
+        "verdict": "PASS",
+        "failed_rules": []
+      },
+      {
+        "name": "Benchmark - 40% LQD / 60% ACWI",
+        "weights": {
+          "BIL": 0.0,
+          "IEF": 0.0,
+          "LQD": 0.4,
+          "ACWI": 0.6
+        },
+        "expected_return": 0.1523137116037754,
+        "volatility": 0.09061277291622749,
+        "reserve_eligible_weight": 0.0,
+        "checks": [
+          {
+            "rule": "Weights sum to 100%",
+            "value": 1.0,
+            "threshold": 1.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Long-only weights",
+            "value": 0.0,
+            "threshold": 0.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Historical return estimate meets objective",
+            "value": 0.1523137116037754,
+            "threshold": 0.065,
+            "status": "PASS"
+          },
+          {
+            "rule": "Reserve-eligible allocation meets minimum",
+            "value": 0.0,
+            "threshold": 0.03,
+            "status": "FAIL"
+          }
+        ],
+        "verdict": "FAIL",
+        "failed_rules": [
+          "Reserve-eligible allocation meets minimum"
+        ]
+      },
+      {
+        "name": "Constrained lowest-volatility portfolio",
+        "weights": {
+          "BIL": 0.8500000000000001,
+          "IEF": 0.0,
+          "LQD": 0.0,
+          "ACWI": 0.15000000000000002
+        },
+        "expected_return": 0.06818096749091286,
+        "volatility": 0.017573698524862926,
+        "reserve_eligible_weight": 0.8500000000000001,
+        "checks": [
+          {
+            "rule": "Weights sum to 100%",
+            "value": 1.0,
+            "threshold": 1.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Long-only weights",
+            "value": 0.0,
+            "threshold": 0.0,
+            "status": "PASS"
+          },
+          {
+            "rule": "Historical return estimate meets objective",
+            "value": 0.06818096749091286,
+            "threshold": 0.065,
+            "status": "PASS"
+          },
+          {
+            "rule": "Reserve-eligible allocation meets minimum",
+            "value": 0.8500000000000001,
+            "threshold": 0.03,
+            "status": "PASS"
+          }
+        ],
+        "verdict": "PASS",
+        "failed_rules": []
+      }
+    ]
+  },
+  "stress_description": "Estimation-window stress: replace all available monthly returns with the last 36 monthly returns.",
+  "largest_constrained_weight_change": 0.25,
+  "stop_condition": "Do not move beyond a pilot if no feasible portfolio meets the stated constraints, if the loss-limit policy remains undefined, or if the stressed allocation changes by 10 percentage points or more."
+}
