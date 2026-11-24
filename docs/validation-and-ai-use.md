@@ -30,7 +30,7 @@ The application uses monthly adjusted-close prices for BIL, IEF, LQD, and ACWI i
 - Prediction of the direction and magnitude of return change: Annualized historical return estimate will increase from about 6.84% to 7.3% (0.46 percentage points). 
 - Prediction of the direction and magnitude of volatility change: Annualized volatility will increase from 6.01% to 6.8%. An increase in equity exposure and decrease in Treasury bill exposure is expected to increase volatility.
 - Prediction of the weight change: ACWI will increase from 40% to around 45% and BIL will decrease from 60% to about 55%. IEF and LQD will remain around zero.
-- Prediction of the committee-decision effect:
+- Prediction of the committee-decision effect: Committee decision will remain rejection. Increasing the higher estimated return will not resolve the percentage point estimation window stress failure or missing loss-limit policy.
 
 ### Result after the run 
 
