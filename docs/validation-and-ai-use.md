@@ -33,6 +33,7 @@ The application uses monthly adjusted-close prices for BIL, IEF, LQD, and ACWI i
 - Prediction of the committee-decision effect: Committee decision will remain rejection. Increasing the higher estimated return will not resolve the percentage point estimation window stress failure or missing loss-limit policy.
 
 ### Result after the run 
+Supporting evidence: `locked-input-result-7pct.png`
 
 - Before result: At the 6.50% objective, the constrained portfolio
   was 60% BIL / 40% ACWI, with a 6.84% historical annualized return
