@@ -28,4 +28,4 @@ The process also exposed repository completeness issues: the runnable Project 2 
 - App launch: Streamlit started successfully and the Meridian investment-management app opened at its local URL.
 - Committee decision location: the **Committee recommendation** section at the bottom of the app.
 - Supporting evidence: `cold-run-tests.png` and `cold-run-app.png`.
-- Fix commit URL: add the final GitHub commit URL after pushing the reproducibility fixes.
+- Fix commit URL: https://github.com/sgulen/ai-finance-selin-gulen/commit/5f16a0f7485198036db8a2d9e83569ea0d9cf7a3
